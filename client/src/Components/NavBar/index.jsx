@@ -1,5 +1,6 @@
+import Login from "../../Pages/Login"
 import DateTime from "../DateTime"
-import Login from "../Login"
+
 
 
 const NavBar = () => {

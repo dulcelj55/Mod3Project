@@ -9,6 +9,7 @@ import Four from './Pages/Four'
 import Manual from './Pages/Manual'
 import Progress from './Pages/Progress'
 import NavBar from './Components/NavBar'
+import Login from './Pages/Login'
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Route path="/four" element= {<Four/>}/>
       <Route path="/manual" element= {<Manual/>}/>
       <Route path="/progress" element= {<Progress/>}/>
+      <Route path="/login" element= {<Login/>}/>
      </Routes>
     </>
   )

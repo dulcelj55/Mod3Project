@@ -1,8 +1,10 @@
 import React from 'react'
+import WorkOutForm from '../../Components/WorkOutForm'
 
 const Manual = () => {
   return (
-    <div>Manual WORK out page
+    <div>Manual Workout 
+        <WorkOutForm/>
         
     </div>
   )
