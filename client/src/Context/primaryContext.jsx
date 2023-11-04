@@ -5,6 +5,7 @@ const PrimaryProvider = (props) =>{
     const [user, setUser]= useState('')
     const [dateTime, setDateTime]= useState('')
     const [userImage, setUserImage]= useState('')
+    const [isSubmitted, setIsSubmitted]= useState(false)
   return (
     <primaryContext.Provider value={
         {
@@ -13,7 +14,9 @@ const PrimaryProvider = (props) =>{
             dateTime,
             setDateTime,
             userImage,
-            setUserImage
+            setUserImage,
+            isSubmitted,
+            setIsSubmitted
         }
     }>
         {props.children}

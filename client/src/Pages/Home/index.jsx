@@ -1,23 +1,19 @@
 import { Link } from "react-router-dom"
-import NavBar from '../../Components/NavBar'
+import { useContext } from "react"
+import { primaryContext } from "../../Context/primaryContext";
+
 
 
 
 const Home = () => {
+  const { user, isSubmitted} = useContext(primaryContext)
   return (
     <>
+   <img src="/Users/dulcejaramil/src/assets/workout.jpeg" alt="React Image" />
+   { isSubmitted? `Logged in as ${user}` : <Link to="/Login">Login</Link>}
    
-    <h1>Choose Your Workout</h1>
-    <div>
-        <Link to = "/manual"><button>Manual</button></Link>
-        <Link to = "/cardio"><button>Cardio</button></Link>
-        <Link to = "/five"><button>5xs A Week</button></Link>
-        <Link to = "/four"><button>4xs A week</button></Link>
-        <Link to = "/everyday"><button>Everyday</button></Link>
-        <Link to = "/progress"><button>Progress</button></Link>
-    </div>
-    <br/>
-    <button>Check your Progress</button>
+   
+   
     
     
     </>

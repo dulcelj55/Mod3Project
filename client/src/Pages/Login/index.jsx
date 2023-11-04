@@ -1,11 +1,12 @@
 import "./index.css";
-import { primaryContext } from '../../Context/primaryContext'
-import {  useContext, useState } from "react";
+import { primaryContext } from "../../Context/primaryContext";
+import {  useContext } from "react";
+import {Link} from "react-router-dom"
 
 const Login = () => {
  
-const{user, setUser, userImage, setUserImage}= useContext(primaryContext)
- const [isSubmitted, setIsSubmitted]= useState(false)
+const{user, setUser, userImage, setUserImage, isSubmitted, setIsSubmitted}= useContext(primaryContext)
+ 
   const showInfo = (e) => {
     e.preventDefault();
     setUser(user)
@@ -37,9 +38,19 @@ const{user, setUser, userImage, setUserImage}= useContext(primaryContext)
       );
     } else {
       return (
-        <div className="banner">
-          <p className="center">{user}!</p>
-         
+        <div className="topbar">
+          <p className="center">{user}, Choose your workout!</p>
+          <div>
+            <h1>Choose your Workout</h1>
+        <Link to = "/manual"><button>Manual</button></Link>
+        <Link to = "/cardio"><button>Cardio</button></Link>
+        <Link to = "/five"><button>5xs A Week</button></Link>
+        <Link to = "/four"><button>4xs A week</button></Link>
+        <Link to = "/everyday"><button>Everyday</button></Link>
+        <Link to = "/progress"><button>Progress</button></Link>
+        <br/>
+    <button>Check your Progress</button>
+    </div>
         </div>
       );
     }

@@ -67,14 +67,14 @@ app.post("/workout", async (req, res) => {
 });
 
 // // READ !!!!
-// app.get("/camps", async (req, res) => {
-//     try {
-//         let dbResponse = await Bootcamp.find();
-//         res.status(200).send(dbResponse)
-//     } catch(err) {
-//         res.status(400).send("error getting camp")
-//     }
-// });
+app.get("/workout", async (req, res) => {
+    try {
+        let dbResponse = await Workout.find();
+        res.status(200).send(dbResponse)
+    } catch(err) {
+        res.status(400).send("error getting workout")
+    }
+});
 
 
 
