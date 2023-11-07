@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./index.css"
 
 const WorkOutForm = () => {
     const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const WorkOutForm = () => {
   return (
     <form onSubmit={handleSubmit}>
        
-        <div>
+        <div className="textcolor">
             <label id="exercise">Exercise:</label>
             <input
                 type="text"
@@ -59,7 +60,7 @@ const WorkOutForm = () => {
                 onChange={handleChange}
             />
         </div>
-        <div>
+        <div className="textcolor">
             <label id="set">Sets:</label>
             <input
                 type="number"
@@ -69,7 +70,7 @@ const WorkOutForm = () => {
                 onChange={handleChange}
             />
         </div>
-        <div>
+        <div className="textcolor">
             <label id="reps">Reps:</label>
             <input
                 type="number"
@@ -79,7 +80,7 @@ const WorkOutForm = () => {
                 onChange={handleChange}
             />
         </div>
-        <div>
+        <div className="textcolor">
             <label id="weight">Weight:</label>
             <input
                 type="number"
@@ -89,7 +90,7 @@ const WorkOutForm = () => {
                 onChange={handleChange}
             />
         </div>
-        <div>
+        <div className="textcolor">
             <label id="other">Other:</label>
             <input
                 type="text"

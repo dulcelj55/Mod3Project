@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet'); 
+require("dotenv").config()
 require('./config/db.js');
 const path = require('path');
 const Workout = require('./models/workout.js');
 const PORT = 3005;
+
 
 
 

@@ -66,14 +66,14 @@ console.log("unable to get new data after delete")
     catch(err) {
 console.log("unable to get new data after update" + err)
     }
-
+    setShow();
   }
  
   
 
   return (
     <>
-      <div>
+      <div id="today">
         <div>
           {" "}
           Today's Work:
