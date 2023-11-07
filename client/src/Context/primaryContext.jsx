@@ -6,17 +6,29 @@ const PrimaryProvider = (props) =>{
     const [dateTime, setDateTime]= useState('')
     const [userImage, setUserImage]= useState('')
     const [isSubmitted, setIsSubmitted]= useState(false)
+    const [workouts, setWorkouts]= useState('')
+    const [workoutsToEdit, setWorkoutsToEdit]= useState('')
   return (
     <primaryContext.Provider value={
         {
             user,
             setUser,
+
             dateTime,
             setDateTime,
+
             userImage,
             setUserImage,
+
             isSubmitted,
-            setIsSubmitted
+            setIsSubmitted,
+
+            workouts,
+            setWorkouts,
+
+            workoutsToEdit,
+            setWorkoutsToEdit
+
         }
     }>
         {props.children}

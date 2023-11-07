@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Home from './Pages/Home'
 import {Route, Routes} from "react-router-dom"
@@ -8,7 +7,6 @@ import Five from './Pages/Five'
 import Four from './Pages/Four'
 import Manual from './Pages/Manual'
 import Progress from './Pages/Progress'
-import NavBar from './Components/NavBar'
 import Login from './Pages/Login'
 
 

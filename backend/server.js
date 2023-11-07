@@ -5,9 +5,9 @@ const helmet = require('helmet');
 require('./config/db.js');
 const path = require('path');
 const Workout = require('./models/workout.js');
-
-
 const PORT = 3005;
+
+
 
 const app = express();
 // START MIDDLEWARE //
@@ -18,10 +18,9 @@ app.use(cors({
 app.use(morgan('dev'));
 app.use(helmet());
 
-// will happen on every request (taking away the /server part)
 app.use((req, res, next)=> {
     if (req.path.startsWith('/server')) {
-        req.url = req.url.replace('/server', ''); // strip /server from the path
+        req.url = req.url.replace('/server', ''); // takes server from path for render
     }
     next();
 })
@@ -33,28 +32,18 @@ app.use((req, res, next)=> {
 // START ROUTES //
 
 
-// CREATE BOOTCAMP
 
 
-// READ BOOTCAMPS
 
-// READ STATES ROUTE
+
+
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 
 
 
-// app.get("/workout", async (req, res) => {
-//     try {
-//         let dbResponse = await ();
-//         res.send(dbResponse)
-//     } catch(err) {
-//         res.status(400).send("error getting the workouts")
-//     }
-// });
-
-// // CREATE !!!!
+// CREATE:
 app.post("/workout", async (req, res) => {
     console.log(req.body)
     try {
@@ -76,13 +65,58 @@ app.get("/workout", async (req, res) => {
     }
 });
 
+// UPDATE
+// app.put("/workout/:workoutId", async (req, res) => {
+//     try {
+//         req.body= {exercise: "burpie"}
+//         let dbResponse = await Workout.findByIdAndUpdate(req.params.workoutId, req.body, {new: true}).populate("workoutId")
+//         console.log(dbResponse, req.body);
+
+//     } catch(err) {
+//         res.status(400).send("error updating workout")
+//     } try{
+//         let dbResponse = await Workout.find();
+//         res.status(200).send(dbResponse);
+//     }catch (err){
+//         res.status(400).send("error showing updated list")
+//     }
+   
+// });
+app.put("/workout/:workoutId", async (req, res) => {
+    try {
+        
+        let dbResponse = await Workout.findByIdAndUpdate(req.params.workoutId, req.body, {new: true})
+        res.status(200);
+    } catch(err) {
+        res.status(400).send("error updating workout")
+    }
+    try{
+        let dbResponse = await Workout.find();
+        res.status(200).send(dbResponse);
+    }catch (err){
+        res.status(400).send("error showing updated list")
+    }
+});
+
+// DELETE
+app.delete("/workout/:idOfWorkout", async (req, res) => {
+    try{let id = req.params.idOfWorkout;
+    let dbResponse = await Workout.findByIdAndDelete(id);
+   }catch (err){
+        res.status(400).send("error deleting workout")
+    }
+    try{
+        let dbResponse = await Workout.find();
+        res.status(200).send(dbResponse);
+    }catch (err){
+        res.status(400).send("error showing updated list")
+    }
+   
+});
 
 
 
-// app.get('/*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-//   });
-// // END ROUTES //
+
 
 app.listen(PORT, () => {
     console.log(`Server LIVE on port ${PORT}`);

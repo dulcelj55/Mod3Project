@@ -1,23 +1,29 @@
-import { Link } from "react-router-dom"
-import { useContext } from "react"
+import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { primaryContext } from "../../Context/primaryContext";
-
-
-
+import "./index.css";
 
 const Home = () => {
-  const { user, isSubmitted} = useContext(primaryContext)
+  const { user, isSubmitted } = useContext(primaryContext);
+
   return (
     <>
-   <img src="/Users/dulcejaramil/src/assets/workout.jpeg" alt="React Image" />
-   { isSubmitted? `Logged in as ${user}` : <Link to="/Login">Login</Link>}
-   
-   
-   
-    
-    
+      <div
+        id="image"
+        style={{
+          backgroundImage: `url(/src/assets/workout.jpeg)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      >
+       {isSubmitted ? (
+  `Logged in as ${user}`
+) : (
+  <Link to="/Login">Sign In</Link>
+)}
+      </div>
     </>
   )
-}
+}  
 
-export default Home
+export default Home;
