@@ -78,7 +78,7 @@ const Login = () => {
       <div
         id="image"
         style={{
-          backgroundImage: `url(/src/assets/workout-logging.webp)`,
+          backgroundImage: `url(./workout-logging.webp)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

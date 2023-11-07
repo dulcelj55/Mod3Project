@@ -11,7 +11,7 @@ const Home = () => {
       <div
         id="image"
         style={{
-          backgroundImage: `url(/src/assets/workout.jpeg)`,
+          backgroundImage: `url(./workout.jpeg)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

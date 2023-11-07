@@ -12,10 +12,10 @@ const handleChange= ()=>{
 
   return (
    
-      <div id="center"
+      <div 
         id="image"
         style={{
-          backgroundImage: `url(/src/assets/backgroundgym.avif)`,
+          backgroundImage: `./backgroundgym.avif`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
