@@ -5,7 +5,7 @@ const helmet = require('helmet');
 require("dotenv").config()
 require('./config/db.js');
 const path = require('path');
-const Workout = require('./models/workout.js');
+const Workout = require('./models/Workout.js');
 const PORT = 3005;
 
 
